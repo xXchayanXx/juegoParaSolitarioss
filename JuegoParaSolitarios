@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class JuegoParaSolitarios{
+   public static void main(String[]args){
+      int numeroSec;
+      int numeroIng;
+      Scanner sc = new Scanner(System.in);
+      
+      System.out.println("buena suerte, adivina el numero");
+      
+      for(int i = 1; i<= 3; i++){
+         System.out.println("intento "+i+"/3");
+         numeroSec = (int)Math.round(Math.random()*10);
+         System.out.println("ingresa un numero del uno al diez");
+         numeroIng = sc.nextInt();
+         if(numeroIng == numeroSec){
+            System.out.println("Bien jugado");
+            break;
+         }else{
+            if(i == 3){
+               System.out.println("haz perdido");
+               System.out.println("el numero era: "+numeroSec);
+               break;
+            }
+            System.out.println("sigue intentandolo");
+         }
+      }
+   }
+}
